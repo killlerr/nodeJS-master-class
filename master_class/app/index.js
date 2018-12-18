@@ -35,7 +35,7 @@ var server = http.createServer(function(req,res){ //req contain information what
     //Get the payload, if any
     const decoder = new StringDecoder('utf8');
     var buffer = '';
-    //request object emits/on the event data
+    //.on request object emits/on the event 'data'
     req.on('data', function(data){
         buffer += decoder.write(data);
     });
@@ -67,8 +67,8 @@ var server = http.createServer(function(req,res){ //req contain information what
             var payloadString = JSON.stringify(payload); //This is the payload handler sending back to user
 
             //Return the response
-            res.setHeader('Content-Type', 'application/json')
-            res.writeHead(statusCode)
+            res.setHeader('Content-Type', 'application/json'); //tell postman body content tye is json
+            res.writeHead(statusCode);
             res.end(payloadString);
 
             //Log request path

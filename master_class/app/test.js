@@ -11,8 +11,7 @@ function doHomework(subject, callback) {
   }
   
   doHomework('math', function(){
-    // Simulate a code delay
-    // setTimeout( function(){
-      console.log(1);
-    // }, 0);
+    var str = "Apple, Banana, Kiwi";
+    var res = str.slice(7, 13);
+    console.log(res)
   });
